@@ -102,13 +102,25 @@ class ProfileScreen extends StatelessWidget {
                           // Avatar
                           Container(
                             padding: const EdgeInsets.all(5),
-                            decoration: const BoxDecoration(
+                            decoration: BoxDecoration(
                               color: Colors.white,
-                              shape: BoxShape.circle,
+                              borderRadius: BorderRadius.circular(20),
+                              boxShadow: [
+                                BoxShadow(
+                                  color: Colors.black.withOpacity(0.1),
+                                  blurRadius: 10,
+                                  offset: const Offset(0, 5)
+                                )
+                              ]
                             ),
-                            child: const CircleAvatar(
-                              radius: 50,
-                              backgroundImage: AssetImage('assets/user_profile.png'),
+                            child: ClipRRect(
+                              borderRadius: BorderRadius.circular(15),
+                              child: Image.asset(
+                                'assets/user_profile.png',
+                                width: 100,
+                                height: 100,
+                                fit: BoxFit.cover,
+                              ),
                             ),
                           ),
                           const SizedBox(height: 25),
